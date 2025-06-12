@@ -1,0 +1,10 @@
+app:
+  url: "https://api.open-meteo.com/v1/forecast"
+  bootstrap_servers: "localhost:9092"
+  topic: "weather/topic"
+
+location:
+  name: "Nashville, TN."
+  lat: 36.18738
+  long: -86.70858
+  
