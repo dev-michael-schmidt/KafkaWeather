@@ -6,7 +6,7 @@ from src.config import Config
 from src.weather_map import rain_codes, snow_codes, bad_weather
 
 
-class Weather():
+class Weather:
 
     def __init__(self):
         self.cfg = Config()
