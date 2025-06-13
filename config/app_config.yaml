@@ -4,7 +4,7 @@ app:
   topic: "weather/topic"
 
 location:
-  name: "Nashville, TN."
-  lat: 36.18738
-  long: -86.70858
+  name:
+  lat:
+  long:
   
