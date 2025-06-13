@@ -1,5 +1,4 @@
 app:
-  url: "https://api.open-meteo.com/v1/forecast"
   bootstrap_servers: "localhost:9092"
   topic: "weather/topic"
 
@@ -8,3 +7,6 @@ location:
   lat:
   long:
   
+apis:
+  weather_url: "https://api.open-meteo.com/v1/forecast"
+  telegram_url: "https://api.telegram.org/bot{bot_token}/{msg}"
