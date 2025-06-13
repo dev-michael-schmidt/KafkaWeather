@@ -2,7 +2,7 @@ import yaml
 
 
 class Config:
-    def __init__(self, path='config.yaml'):
+    def __init__(self, path='app_config.yaml'):
         self.path = path
         with open(self.path, "r") as f:
             self.config = yaml.safe_load(f)
