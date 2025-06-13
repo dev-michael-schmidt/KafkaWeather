@@ -11,6 +11,7 @@ class Weather:
     def __init__(self):
         self.cfg = Config()
         self.app = self.cfg.get('app')
+        self.apis = self.cfg.get('apis')
         self.location = self.cfg.get('location')
 
         self.consumer = self.get_consumer()
@@ -51,7 +52,7 @@ class Weather:
             "timezone": "auto",
         }
 
-        response = requests.get(self.app.get('url'), params=params)
+        response = requests.get(self.apis.get('weather_url'), params=params)
         response.raise_for_status()  # Raises error for HTTP failures
         data = response.json()
 
