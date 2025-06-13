@@ -43,7 +43,7 @@ class Weather:
 
     def get_weather(self):
 
-        name = self.app.get('name')
+        name = self.app.get('name', 'Area 51')
         params = {
             "latitude": self.location.get('lat', 37.2350),
             "longitude": self.location.get('long', -115.8111),
