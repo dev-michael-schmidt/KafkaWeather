@@ -12,8 +12,7 @@ def handle_incoming_message(message: dict):
 
 
 def main():
-    # Start consumer thread
-    threading.Thread(target=consumer_loop, daemon=True).start()
+    cfg = Configuration.from_yaml()
 
     while True:
         print("⏳ Checking weather...")
