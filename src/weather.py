@@ -1,7 +1,7 @@
 import requests
-from kafka import KafkaConsumer, KafkaProducer
 
-    def get_consumer(self):
+from src.config import Configuration
+from weather_code_map import WeatherCodeMap
 
 
 def get_weather(weather_config: Configuration) -> dict:
