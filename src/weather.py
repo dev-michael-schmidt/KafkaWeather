@@ -14,9 +14,9 @@ def get_weather(weather_config: Configuration) -> dict:
         "timezone": "auto",
     }
 
-        response = requests.get(self.apis.get('weather_url'), params=params)
-        response.raise_for_status()  # Raises error for HTTP failures
-        data = response.json()
+    response = requests.get(weather_config.apis.weather_url, params=params)
+    response.raise_for_status()
+    data = response.json()
 
     weather_code = data['current_weather']['weathercode']
     name = weather_config.location.name
