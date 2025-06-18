@@ -60,6 +60,15 @@ class Weather:
 
         if weather_code in snow_codes:
             return f"it's snowing in {name}"
+    weather_code = data['current_weather']['weathercode']
+    if weather_code in WeatherCodeMap.rain_codes:
+        data['result'] = f"it's raining in {name}"
+    elif weather_code in WeatherCodeMap.snow_codes:
+        data['result'] = f"it's snowing in {name}"
+    elif weather_code in WeatherCodeMap.bad_weather:
+        data['result'] = f"it's bad in {name}"
+    else:
+        data['result'] = f"No precipitation in {name}"
 
         if weather_code in bad_weather:
             return f"it's bad weather in {name}"
