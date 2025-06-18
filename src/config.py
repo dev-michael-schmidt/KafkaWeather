@@ -1,15 +1,39 @@
+from dataclasses import dataclass
+
 import yaml
 
 
-class Config:
-    def __init__(self, path='app_config.yaml'):
-        self.path = path
-        with open(self.path, "r") as f:
-            self.config = yaml.safe_load(f)
+@dataclass(frozen=True)
+class AppConfig:
+    bootstrap_servers: str
+    topic: str
+    name: str
 
-    def get(self, key, default=None):
-        return self.config.get(key, default)
+@dataclass(frozen=True)
+class ApisConfig:
+    weather_url: str
+    telegram_url_template: str
+    telegram_bot_token: str
 
+@dataclass(frozen=True)
+class LocationConfig:
+    lat: float
+    long: float
+    name: str
 
+@dataclass(frozen=True)
+class Configuration:
+    app: AppConfig
+    apis: ApisConfig
+    location: LocationConfig
 
+    @staticmethod
+    def from_yaml(path: str = 'app_config.yaml') -> "Configuration":
+        with open(path, "r") as f:
+            raw = yaml.safe_load(f)
 
+        return Configuration(
+            app=AppConfig(**raw['app']),
+            apis=ApisConfig(**raw['apis']),
+            location=LocationConfig(**raw['location']),
+        )
