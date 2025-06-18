@@ -29,7 +29,4 @@ def get_weather(weather_config: Configuration) -> dict:
     else:
         data['result'] = f"No precipitation in {name}"
 
-        if weather_code in bad_weather:
-            return f"it's bad weather in {name}"
-
-        return f"No precipitation in {name}"
+    return data
