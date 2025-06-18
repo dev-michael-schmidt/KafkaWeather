@@ -1,5 +1,3 @@
-from configparser import ConfigParser
-
 import requests
 from kafka import KafkaConsumer, KafkaProducer
 from src.config import Config
