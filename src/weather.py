@@ -4,7 +4,7 @@ from kafka import KafkaConsumer, KafkaProducer
     def get_consumer(self):
 
 
-    def get_producer(self):
+def get_weather(weather_config: Configuration) -> dict:
 
     params = {
         "latitude": weather_config.location.lat,
