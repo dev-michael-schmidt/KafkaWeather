@@ -1,18 +1,5 @@
 import requests
 from kafka import KafkaConsumer, KafkaProducer
-from src.config import Config
-from src.weather_map import rain_codes, snow_codes, bad_weather
-
-
-class Weather:
-
-    def __init__(self):
-        self.cfg = Config()
-        self.app = self.cfg.get('app')
-        self.apis = self.cfg.get('apis')
-        self.location = self.cfg.get('location')
-
-        self.consumer = self.get_consumer()
 
     def get_consumer(self):
 
