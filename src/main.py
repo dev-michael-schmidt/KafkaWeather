@@ -7,6 +7,8 @@ from src.kafka_consumer import KafkaConsumerApp
 from src.kafka_producer import KafkaProducerApp
 
 
+def handle_incoming_message(message: dict):
+    print(f"📩 Got message: {message}")
 
 
 def main():
