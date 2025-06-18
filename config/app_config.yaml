@@ -9,4 +9,5 @@ location:
   
 apis:
   weather_url: "https://api.open-meteo.com/v1/forecast"
-  telegram_url: "https://api.telegram.org/bot{bot_token}/{msg}"
+  telegram_url_template: "https://api.telegram.org/bot{bot_token}/{msg}"
+  telegram_bot_token:  "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"
