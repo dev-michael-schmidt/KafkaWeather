@@ -3,12 +3,12 @@ from typing import Callable
 
 from kafka import KafkaConsumer
 
-from src.config import AppConfig
-from src.kafka_base import KafkaBase
+from config import Configuration
+from kafka_base import KafkaBase
 
 
 class KafkaConsumerApp(KafkaBase):
-    def __init__(self, cfg: AppConfig):
+    def __init__(self, cfg: Configuration):
         super().__init__(cfg, role='consumer')
         self.consumer = KafkaConsumer(
             self.topic,
@@ -20,8 +20,7 @@ class KafkaConsumerApp(KafkaBase):
         )
 
     def run(self, handle_message: Callable[[dict], None]):
-        self.run_loop(
-            source=self.consumer,
+        self.dispatch(
             handler=handle_message,
             log=self.log
         )
