@@ -33,15 +33,3 @@ class KafkaBase:
                 log(f"Handling: {value}")
             handler(value)
 
-
-"""
-Whats a Tuesday like
-What is my expectation after 6 mo.
-How long has the most senior engineer worked on your team.
-Team structure: (who does what)
-Workflow: Autonomous & flexible / structured & organized
-
-Who/how many can I learn from.  Who and how any and I mentor and share expierences.
-
-What do YOU or the team do for fun?
-"""
