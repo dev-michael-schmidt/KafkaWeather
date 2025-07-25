@@ -3,15 +3,8 @@ import ssl
 import smtplib
 from email.message import EmailMessage
 
-def send_gmail(subject: str,
-               body: str,
-               to_addr: str,
-               from_addr: str | None = None,
-               app_password: str | None = None):
-    """Send a simple text email via Gmail SMTP."""
-    from_addr = from_addr or os.environ["GMAIL_USER"]
-    app_password = app_password or os.environ["GMAIL_APP_PASS"]
-
+def send_gmail(subject: str, body: str, to_addr: str, from_addr: str, app_password: str):
+    host = os.environ['SMTP_HOST']
     msg = EmailMessage()
     msg["Subject"] = subject
     msg["From"] = from_addr
