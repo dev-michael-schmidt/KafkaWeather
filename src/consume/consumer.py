@@ -37,6 +37,9 @@ def handle_message(message: dict):
 class KafkaConsumerApp(KafkaBase):
     def __init__(self, cfg: Configuration):
         super().__init__(cfg, role='consumer')
+
+        group_id = os.environ['KAFKA_GROUP_ID']
+
         self.consumer = KafkaConsumer(
             self.topic,
             bootstrap_servers=self.bootstrap_servers,
