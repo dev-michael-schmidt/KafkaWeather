@@ -2,9 +2,9 @@ FROM python:3.11-bookworm
 LABEL authors="mike"
 
 
-ENV TO_ADDR="8136036583@msg.fi.google.com"
-ENV GMAIL_USER="michael.schmidt82@gmail.com"
-ENV GMAIL_APP_PASS="vfvh tbco wdpl vyha"
+ENV TO_ADDR=""
+ENV GMAIL_USER=""
+ENV GMAIL_APP_PASS=""
 
 RUN set -eux; \
     apt update && \
