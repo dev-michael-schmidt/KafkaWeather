@@ -7,13 +7,10 @@ import yaml
 class AppConfig:
     bootstrap_servers: str
     topic: str
-    name: str
 
 @dataclass(frozen=True)
 class ApisConfig:
     weather_url: str
-    telegram_url_template: str
-    telegram_bot_token: str
 
 @dataclass(frozen=True)
 class LocationConfig:
@@ -28,7 +25,7 @@ class Configuration:
     location: LocationConfig
 
     @staticmethod
-    def from_yaml(path: str = 'app_config.yaml') -> "Configuration":
+    def from_yaml(path: str = 'config.yaml') -> "Configuration":
         with open(path, "r") as f:
             raw = yaml.safe_load(f)
 
