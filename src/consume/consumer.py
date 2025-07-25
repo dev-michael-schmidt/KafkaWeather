@@ -45,7 +45,7 @@ class KafkaConsumerApp(KafkaBase):
             bootstrap_servers=self.bootstrap_servers,
             auto_offset_reset='earliest',
             enable_auto_commit=True,
-            group_id='my-group',
+            group_id=group_id,
             value_deserializer=lambda m: json.loads(m.decode('utf-8'))
         )
 
