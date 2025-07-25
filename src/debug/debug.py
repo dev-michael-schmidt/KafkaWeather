@@ -1,7 +1,7 @@
 from kafka import KafkaConsumer
 from kafka.errors import NoBrokersAvailable
 
-BROKERS = ['broker-1:19092', 'broker-2:19092', 'broker-3:19092']
+BROKERS = ['kafka:9092']
 
 try:
     print(f"🧪 Connecting to Kafka brokers: {BROKERS}")
