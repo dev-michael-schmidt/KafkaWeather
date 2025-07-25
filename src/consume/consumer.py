@@ -6,7 +6,7 @@ from kafka import KafkaConsumer
 
 from config import Configuration
 from kafka_base import consumer_source, dispatch, KafkaBase
-from weather_code_map import rain_codes, snow_codes, bad_weather
+from weather_code_map import RAIN_CODES, SNOW_CODES, SEVERE_WEATHER
 from send_gmail import send_gmail
 
 
