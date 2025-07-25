@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: GMail",
+        "type": "python",
+        "request": "launch",
+        "program": "src/consume/main.py",
+        "env": {
+          "GMAIL_USER": "",
+          "GMAIL_APP_PASS": ""
+        },
+        "envFile": "${workspaceFolder}/.env"
+      }
+    ]
+  }
+  
