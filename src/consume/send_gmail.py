@@ -12,7 +12,7 @@ def send_gmail(subject: str, body: str, to_addr: str, from_addr: str, app_passwo
     msg.set_content(body)
 
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
+    with smtplib.SMTP_SSL(host=host, port=465, context=context) as smtp:
         smtp.login(from_addr, app_password)
         smtp.send_message(msg)
 
