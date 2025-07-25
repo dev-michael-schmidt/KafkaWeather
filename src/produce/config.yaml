@@ -1,0 +1,11 @@
+app:
+  bootstrap_servers: "kafka:9092"
+  topic: "weather-topic"
+
+location:
+  name: Area 51
+  lat: 37.233
+  long: -115.808
+  
+apis:
+  weather_url: "https://api.open-meteo.com/v1/forecast"
