@@ -1,14 +1,13 @@
 import json
-from typing import Callable
-
 from kafka import KafkaProducer
 
-from kafka_base import KafkaBase
+from kafka_base import KafkaBase, dispatch, producer_source
 
 
 class KafkaProducerApp(KafkaBase):
     def __init__(self, cfg):
         super().__init__(cfg, role='producer')
+        self.cfg = cfg
         self.producer = KafkaProducer(
             bootstrap_servers=self.bootstrap_servers,
             value_serializer=lambda v: json.dumps(v).encode('utf-8')
@@ -19,9 +18,9 @@ class KafkaProducerApp(KafkaBase):
         self.producer.send(self.topic, value=message)
         self.producer.flush()
 
-    def run(self, message_factory: Callable[[], dict], interval_seconds=10):
-        self.dispatch(
+    def run(self):
+        dispatch(
+            source=producer_source(self.cfg),
             handler=self.send,
-            interval_seconds=interval_seconds,
             log=self.log
         )
