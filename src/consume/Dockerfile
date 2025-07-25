@@ -1,11 +1,6 @@
 FROM python:3.11-bookworm
 LABEL authors="mike"
 
-
-ENV TO_ADDR=""
-ENV GMAIL_USER=""
-ENV GMAIL_APP_PASS=""
-
 RUN set -eux; \
     apt update && \
     apt upgrade -y --no-install-recommends
