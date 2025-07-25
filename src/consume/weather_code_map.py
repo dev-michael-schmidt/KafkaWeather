@@ -34,8 +34,8 @@ class WeatherCodeMap:
         99: "Thunderstorm with heavy hail",
     }
 
-rain_codes = (51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99)
+RAIN_CODES = (51, 53, 55, 56, 57, 61, 63, 66, 80, 81)
 
-snow_codes = (71, 73, 75, 77, 85, 86)
+SNOW_CODES = (71, 73, 77, 85, 86)
 
-bad_weather = (65, 67, 75, 82, 95, 96, 99)
+SEVERE_WEATHER = (65, 67, 75, 82, 95, 96, 99)
