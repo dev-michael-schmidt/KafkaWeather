@@ -16,11 +16,11 @@ def handle_message(message: dict):
     weather_code = message['current_weather']['weathercode']
     print(f'weather code: {weather_code}')
 
-    if weather_code in rain_codes:
+    if weather_code in RAIN_CODES:
         result = "it's raining"
-    elif weather_code in snow_codes:
+    elif weather_code in SNOW_CODES:
         result = "it's snowing"
-    elif weather_code in bad_weather:
+    elif weather_code in SEVERE_WEATHER:
         result = "it's bad out there"
     else:
         result = "It's a nice day"
